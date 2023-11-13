@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <p>BINGBONg</p>
+      <a href="index.html">
+        <button type="button">Home</button>
+      </a>
+      <a href="parks.html">
+        <button type="button">Parks</button>
+      </a>
+      <a href="mountains.html">
+        <button type="button">Mountains</button>
+      </a>
+      <br />
+      <input type="radio" />
+      <input type="radio" />
+      <br />
+      <form>
+        <label for="">States/Territories</label>
+        <select id="statesList">
+          <option value="">select...</option>
+        </select>
+      </form>
+      <form>
+        <label for="">Park Type</label>
+        <select id="parkTypeList">
+          <option value="">select...</option>
+        </select>
+      </form>
+    </header>
+    <main>
+        <table id="parksTable" style="display: none">
+            <thead>
+              <tr>
+                
+                <th>LocationName</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZipCode</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="parksTableBody"></tbody>
+          </table>
+    </main>
+    <footer></footer>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="/scripts/parks.js"></script>
+  </body>
+</html>

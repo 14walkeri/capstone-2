@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <p>BINGBONg</p>
+      <a href="index.html">
+        <button type="button">Home</button>
+      </a>
+      <a href="parks.html">
+        <button type="button">Parks</button>
+      </a>
+      <a href="mountains.html">
+        <button type="button">Mountains</button>
+      </a>
+
+      <form>
+        <label for="">Mountains</label>
+        <select id="mountainsList">
+          <option value="">select...</option>
+        </select>
+      </form>
+    </header>
+    <main>
+        <table id="mountainsTable" style="display: none">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Elevation</th>
+                <th>Effort</th>
+                <th>img</th>
+                <th>Desc</th>
+                <th>Coords</th>
+                <th>Lat</th>
+                <th>Lng</th>
+              </tr>
+            </thead>
+            <tbody id="mountainsTableBody"></tbody>
+          </table>
+    </main>
+    <footer></footer>
+    <script src="scripts/mountainData.js"></script>
+    <script src="scripts/mountains.js"></script>
+  </body>
+</html>
