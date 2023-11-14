@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
+
+    <style>
+      :root {
+        --primary: #43a047;
+        --primary-hover: #7cb342;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <p>BINGBONg</p>
+      <h1>Parks</h1>
       <a href="index.html">
         <button type="button">Home</button>
       </a>
@@ -18,41 +26,48 @@
         <button type="button">Mountains</button>
       </a>
       <br />
-      <input type="radio" />
-      <input type="radio" />
+      <fieldset class="radio">
+        <input type="radio" name="parkTypeSelector" id="statesRadio" />
+        <label for="statesRadio">States/Territories</label>
+
+        <input type="radio" name="parkTypeSelector" id="typeRadio" />
+        <label for="typeRadio">Park Types</label>
+
+        <input type="radio" name="parkTypeSelector" id="allRadio" />
+        <label for="allRadio">All Parks</label>
+      </fieldset>
       <br />
       <form>
-        <label for="">States/Territories</label>
-        <select id="statesList">
+        <label style="display: none" id="labelForStates" for="">States/Territories</label>
+        <select style="display: none" id="statesList">
           <option value="">select...</option>
         </select>
-      </form>
-      <form>
-        <label for="">Park Type</label>
-        <select id="parkTypeList">
+
+        <label style="display: none" id="labelForType" for="">Park Type</label>
+        <select style="display: none" id="parkTypeList">
           <option value="">select...</option>
         </select>
       </form>
     </header>
     <main>
+      <article>
         <table id="parksTable" style="display: none">
-            <thead>
-              <tr>
-                
-                <th>LocationName</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>ZipCode</th>
-                <th>Phone</th>
-                <th>Fax</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-                <th>Location</th>
-              </tr>
-            </thead>
-            <tbody id="parksTableBody"></tbody>
-          </table>
+          <thead>
+            <tr>
+              <th>LocationName</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>ZipCode</th>
+              <th>Phone</th>
+              <th>Fax</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+            </tr>
+          </thead>
+          <tbody id="parksTableBody"></tbody>
+        </table>
+      </article>
     </main>
     <footer></footer>
     <script src="scripts/locationData.js"></script>

@@ -1,6 +1,7 @@
 const mountainsTable = document.querySelector("#mountainsTable");
 const mountainsList = document.querySelector("#mountainsList");
 const mountainsTableBody = document.querySelector("#mountainsTableBody");
+const imagesDiv = document.querySelector("#imageMountain");
 function loadMountains() {
   for (const mountain of mountainsArray) {
     let option = document.createElement("option");
@@ -21,6 +22,7 @@ function loadMountainsTable() {
   }
 
   for (const mountain of mountainsArray) {
+    let coords = mountain.coords;
     if (mountain.name == id) {
       let row = mountainsTableBody.insertRow(-1);
       let cell1 = row.insertCell(0);
@@ -34,9 +36,17 @@ function loadMountainsTable() {
       let cell5 = row.insertCell(4);
       cell5.innerText = mountain.desc;
       let cell6 = row.insertCell(5);
-      cell6.innerText = mountain.coords;
+      cell6.innerText = coords.lat;
       let cell7 = row.insertCell(6);
-      cell7.innerText = mountain.lat;
+      cell7.innerText = coords.lng;
+      // need to get long and lat
+      let image = document.createElement("img");
+
+      image.src = mountain.img;
+
+      image.alt = mountain.name;
+
+      imagesDiv.appendChild(image);
     }
   }
 }

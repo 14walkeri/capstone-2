@@ -3,6 +3,11 @@ const statesList = document.getElementById("statesList");
 const parkTypeList = document.getElementById("parkTypeList");
 const parksTableBody = document.getElementById("parksTableBody");
 const parksTable = document.getElementById("parksTable");
+const statesRadio = document.getElementById("statesRadio");
+const typeRadio = document.getElementById("typeRadio");
+const allRadio = document.getElementById("allRadio");
+const labelForStates = document.getElementById("labelForStates");
+const labelForType = document.getElementById("labelForType");
 // Load by Location
 function loadDropDownStatesList() {
   for (const location of locationsArray) {
@@ -43,8 +48,6 @@ function loadParksTable() {
       cell8.innerText = locationInfo.Latitude;
       let cell9 = row.insertCell(8);
       cell9.innerText = locationInfo.Longitude;
-      let cell10 = row.insertCell(9);
-      cell10.innerText = locationInfo.Location;
     }
   }
 }
@@ -60,16 +63,15 @@ function loadDropdownByParkType() {
 function loadParksTableData() {
   parksTableBody.innerHTML = "";
 
-  const type = parkTypeList.value;
-
+  const type = parkTypeList.value.toLocaleLowerCase();
+  var parkArrayFiltered = nationalParksArray.filter((e) => e.LocationName.toLocaleLowerCase().includes(type));
   if (type) {
     parksTable.style.display = "block";
   } else {
     parksTable.style.display = "none";
   }
-  for (const locationInfoNew of nationalParksArray) {
-     
-    if (locationInfoNew.LocationName == type) {
+  for (const locationInfoNew of parkArrayFiltered) {
+    {
       let row = parksTableBody.insertRow(-1);
       let cell1 = row.insertCell(0);
       cell1.innerText = locationInfoNew.LocationName;
@@ -89,9 +91,37 @@ function loadParksTableData() {
       cell8.innerText = locationInfoNew.Latitude;
       let cell9 = row.insertCell(8);
       cell9.innerText = locationInfoNew.Longitude;
-      let cell10 = row.insertCell(9);
-      cell10.innerText = locationInfoNew.Location;
     }
+  }
+}
+
+//function for radio buttons to hide
+//show function for states
+function parkTypeSelectorStates() {
+  const stateRadio = statesRadio.value;
+
+  if (stateRadio) {
+    labelForStates.style.display = "block";
+    statesList.style.display = "block";
+    labelForType.style.display = "none";
+    parkTypeList.style.display = "none";
+  } else {
+    labelForStates.style.display = "none";
+    statesList.style.display = "none";
+  }
+}
+//show function for type
+function parkTypeSelectorType() {
+  const type = typeRadio.value;
+
+  if (type) {
+    labelForType.style.display = "block";
+    parkTypeList.style.display = "block";
+    labelForStates.style.display = "none";
+    statesList.style.display = "none";
+  } else {
+    labelForType.style.display = "none";
+    parkTypeList.style.display = "none";
   }
 }
 //wired stuff
@@ -99,3 +129,5 @@ statesList.onchange = loadParksTable;
 parkTypeList.onchange = loadParksTableData;
 loadDropDownStatesList();
 loadDropdownByParkType();
+statesRadio.onclick = parkTypeSelectorStates;
+typeRadio.onclick = parkTypeSelectorType;

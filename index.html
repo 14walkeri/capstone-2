@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Park</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
+    <style>
+      button {
+        color: rgb(0, 0, 0);
+      }
+      :root {
+        --primary: #43a047;
+        --primary-hover: #7cb342;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Welcome to Pittsburgh Parks</h1>
-      <a href="index.html">
-        <button type="button">Home</button>
-      </a>
-      <a href="parks.html">
-        <button type="button">Parks</button>
-      </a>
-      <a href="mountains.html">
-        <button type="button">Mountains</button>
-      </a>
-    </header>
-    <main></main>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="secondary">Home</a></li>
+        <li><a href="parks.html" class="secondary">Parks</a></li>
+        <li><a href="mountains.html" class="secondary">Mountains</a></li>
+      </ul>
+      <ul>
+        <li><strong>Parks and Rec</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#" class="secondary">…</a></li>
+      </ul>
+    </nav>
+    <main>
+        
+    </main>
     <footer>
       <p>2012 parks services</p>
     </footer>

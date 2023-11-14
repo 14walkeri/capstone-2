@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css" />
+
+    <style>
+      :root {
+        --primary: #43a047;
+        --primary-hover: #7cb342;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <p>BINGBONg</p>
+      <h1>Mountains</h1>
       <a href="index.html">
         <button type="button">Home</button>
       </a>
@@ -26,21 +34,21 @@
       </form>
     </header>
     <main>
-        <table id="mountainsTable" style="display: none">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Elevation</th>
-                <th>Effort</th>
-                <th>img</th>
-                <th>Desc</th>
-                <th>Coords</th>
-                <th>Lat</th>
-                <th>Lng</th>
-              </tr>
-            </thead>
-            <tbody id="mountainsTableBody"></tbody>
-          </table>
+      <table id="mountainsTable" style="display: none">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Elevation</th>
+            <th>Effort</th>
+            <th>image</th>
+            <th>Desc</th>
+            <th>Lat</th>
+            <th>Lng</th>
+          </tr>
+        </thead>
+        <tbody id="mountainsTableBody"></tbody>
+      </table>
+      <div id="imageMountain"></div>
     </main>
     <footer></footer>
     <script src="scripts/mountainData.js"></script>
