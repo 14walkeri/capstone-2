@@ -1,11 +1,14 @@
-// all my html elements
+// html elements for list
 const statesList = document.getElementById("statesList");
 const parkTypeList = document.getElementById("parkTypeList");
+//html elements for table
 const parksTableBody = document.getElementById("parksTableBody");
 const parksTable = document.getElementById("parksTable");
+//html elements radio
 const statesRadio = document.getElementById("statesRadio");
 const typeRadio = document.getElementById("typeRadio");
 const allRadio = document.getElementById("allRadio");
+//html elements label
 const labelForStates = document.getElementById("labelForStates");
 const labelForType = document.getElementById("labelForType");
 // Load by Location
@@ -105,6 +108,7 @@ function parkTypeSelectorStates() {
     statesList.style.display = "block";
     labelForType.style.display = "none";
     parkTypeList.style.display = "none";
+    parksTable.style.display = "none";
   } else {
     labelForStates.style.display = "none";
     statesList.style.display = "none";
@@ -119,9 +123,48 @@ function parkTypeSelectorType() {
     parkTypeList.style.display = "block";
     labelForStates.style.display = "none";
     statesList.style.display = "none";
+    parksTable.style.display = "none";
   } else {
     labelForType.style.display = "none";
     parkTypeList.style.display = "none";
+  }
+}
+
+//function for third radio button to always show all parks
+function showParksTableData() {
+  parksTableBody.innerHTML = "";
+  const state = allRadio.value;
+  if (state) {
+    parksTable.style.display = "block";
+    labelForType.style.display = "none";
+    parkTypeList.style.display = "none";
+    labelForStates.style.display = "none";
+    statesList.style.display = "none";
+  } else {
+    parksTable.style.display = "none";
+  }
+  for (const locationInfoNew of nationalParksArray) {
+    {
+      let row = parksTableBody.insertRow(-1);
+      let cell1 = row.insertCell(0);
+      cell1.innerText = locationInfoNew.LocationName;
+      let cell2 = row.insertCell(1);
+      cell2.innerText = locationInfoNew.Address;
+      let cell3 = row.insertCell(2);
+      cell3.innerText = locationInfoNew.City;
+      let cell4 = row.insertCell(3);
+      cell4.innerText = locationInfoNew.State;
+      let cell5 = row.insertCell(4);
+      cell5.innerText = locationInfoNew.ZipCode;
+      let cell6 = row.insertCell(5);
+      cell6.innerText = locationInfoNew.Phone;
+      let cell7 = row.insertCell(6);
+      cell7.innerText = locationInfoNew.Fax;
+      let cell8 = row.insertCell(7);
+      cell8.innerText = locationInfoNew.Latitude;
+      let cell9 = row.insertCell(8);
+      cell9.innerText = locationInfoNew.Longitude;
+    }
   }
 }
 //wired stuff
@@ -129,5 +172,6 @@ statesList.onchange = loadParksTable;
 parkTypeList.onchange = loadParksTableData;
 loadDropDownStatesList();
 loadDropdownByParkType();
+allRadio.onclick = showParksTableData;
 statesRadio.onclick = parkTypeSelectorStates;
 typeRadio.onclick = parkTypeSelectorType;
