@@ -12,11 +12,12 @@ function loadMountains() {
 
 function loadMountainsTable() {
   mountainsTableBody.innerHTML = "";
-
+  imagesDiv.innerHTML = "";
   const id = mountainsList.value;
 
   if (id) {
     mountainsTable.style.display = "block";
+    imagesDiv.style.display = "block";
   } else {
     mountainsTable.style.display = "none";
   }
@@ -42,7 +43,7 @@ function loadMountainsTable() {
       // need to get long and lat
       let image = document.createElement("img");
 
-      image.src = mountain.img;
+      image.src = `images/${mountain.img}`;
 
       image.alt = mountain.name;
 
