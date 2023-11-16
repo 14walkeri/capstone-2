@@ -58,6 +58,7 @@ function loadParksTable() {
         let cell10 = row.insertCell(9);
         link.href = locationInfo.Visit;
         link.innerText = locationInfo.LocationName;
+        link.target = `_blank`;
         cell10.appendChild(link);
       }
     }
@@ -110,6 +111,7 @@ function loadParksTableData() {
         let cell10 = row.insertCell(9);
         link.href = locationInfoNew.Visit;
         link.innerText = locationInfoNew.LocationName;
+        link.target = `_blank`;
         cell10.appendChild(link);
       }
     }
@@ -190,6 +192,7 @@ function showParksTableData() {
         let cell10 = row.insertCell(9);
         link.href = locationInfoNew.Visit;
         link.innerText = locationInfoNew.LocationName;
+        link.target = `_blank`;
         cell10.appendChild(link);
       }
     }
