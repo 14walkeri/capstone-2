@@ -11,31 +11,38 @@
         --primary: #43a047;
         --primary-hover: #7cb342;
       }
+      .box {
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
+  <header>
+    <nav>
+      <ul>
+        <li><strong>Parks n Rec</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="parks.html">Parks</a></li>
+        <li><a href="mountains.html">Mountains</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <header>
-      <h1>Parks</h1>
-      <a href="index.html">
-        <button type="button">Home</button>
-      </a>
-      <a href="parks.html">
-        <button type="button">Parks</button>
-      </a>
-      <a href="mountains.html">
-        <button type="button">Mountains</button>
-      </a>
-      <br />
-      <fieldset class="radio">
-        <input type="radio" name="parkTypeSelector" id="statesRadio" />
-        <label for="statesRadio">States/Territories</label>
+    <main>
+      <div class="box">
+        <fieldset class="radio">
+          <input type="radio" name="parkTypeSelector" id="statesRadio" />
+          <label for="statesRadio">States/Territories</label>
 
-        <input type="radio" name="parkTypeSelector" id="typeRadio" />
-        <label for="typeRadio">Park Types</label>
+          <input type="radio" name="parkTypeSelector" id="typeRadio" />
+          <label for="typeRadio">Park Types</label>
 
-        <input type="radio" name="parkTypeSelector" id="allRadio" />
-        <label for="allRadio">All Parks</label>
-      </fieldset>
+          <input type="radio" name="parkTypeSelector" id="allRadio" />
+          <label for="allRadio">All Parks</label>
+        </fieldset>
+      </div>
       <br />
       <form>
         <label style="display: none" id="labelForStates" for="">States/Territories</label>
@@ -48,28 +55,30 @@
           <option value="">select...</option>
         </select>
       </form>
-    </header>
-    <main>
-      <article>
+      <figure>
         <table id="parksTable" style="display: none">
           <thead>
             <tr>
-              <th>LocationName</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>State</th>
-              <th>ZipCode</th>
-              <th>Phone</th>
-              <th>Fax</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
+              <th scope="col">LocationName</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">ZipCode</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Fax</th>
+              <th scope="col">Latitude</th>
+              <th scope="col">Longitude</th>
+              <th scope="col">Website</th>
             </tr>
           </thead>
+
           <tbody id="parksTableBody"></tbody>
         </table>
-      </article>
+      </figure>
     </main>
-    <footer></footer>
+    <footer>
+      <p>2012 parks services</p>
+    </footer>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>

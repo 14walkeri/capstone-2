@@ -51,6 +51,15 @@ function loadParksTable() {
       cell8.innerText = locationInfo.Latitude;
       let cell9 = row.insertCell(8);
       cell9.innerText = locationInfo.Longitude;
+      // let cell10 = row.insertCell(9);
+      // cell10.innerText = locationInfo.Visit;
+      if (locationInfo.Visit) {
+        var link = document.createElement("a");
+        let cell10 = row.insertCell(9);
+        link.href = locationInfo.Visit;
+        link.innerText = locationInfo.LocationName;
+        cell10.appendChild(link);
+      }
     }
   }
 }
@@ -94,11 +103,21 @@ function loadParksTableData() {
       cell8.innerText = locationInfoNew.Latitude;
       let cell9 = row.insertCell(8);
       cell9.innerText = locationInfoNew.Longitude;
+      //   let cell10 = row.insertCell(9);
+      //   cell10.innerText = locationInfoNew.Visit;
+      if (locationInfoNew.Visit) {
+        var link = document.createElement("a");
+        let cell10 = row.insertCell(9);
+        link.href = locationInfoNew.Visit;
+        link.innerText = locationInfoNew.LocationName;
+        cell10.appendChild(link);
+      }
     }
   }
 }
 
 //function for radio buttons to hide
+
 //show function for states
 function parkTypeSelectorStates() {
   const stateRadio = statesRadio.value;
@@ -164,6 +183,15 @@ function showParksTableData() {
       cell8.innerText = locationInfoNew.Latitude;
       let cell9 = row.insertCell(8);
       cell9.innerText = locationInfoNew.Longitude;
+      //   let cell10 = row.insertCell(9);
+      //   cell10.innerText = locationInfoNew.Visit;
+      if (locationInfoNew.Visit) {
+        var link = document.createElement("a");
+        let cell10 = row.insertCell(9);
+        link.href = locationInfoNew.Visit;
+        link.innerText = locationInfoNew.LocationName;
+        cell10.appendChild(link);
+      }
     }
   }
 }
