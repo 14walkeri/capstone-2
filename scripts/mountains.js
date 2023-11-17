@@ -51,13 +51,11 @@ function loadMountainsTable(lat, lng) {
       let cell3 = row.insertCell(2);
       cell3.innerText = mountain.effort;
       let cell4 = row.insertCell(3);
-      cell4.innerText = mountain.img;
+      cell4.innerText = mountain.desc;
       let cell5 = row.insertCell(4);
-      cell5.innerText = mountain.desc;
+      cell5.innerText = coords.lat;
       let cell6 = row.insertCell(5);
-      cell6.innerText = coords.lat;
-      let cell7 = row.insertCell(6);
-      cell7.innerText = coords.lng;
+      cell6.innerText = coords.lng;
 
       let image = document.createElement("img");
 
@@ -68,19 +66,12 @@ function loadMountainsTable(lat, lng) {
       imagesDiv.appendChild(image);
       getSunsetForMountain(coords.lat, coords.lng);
 
-      // div = x.then((e) => e.results.sunrise.sunset);
+      
     }
   }
 }
 
-// function returnSunsetForMountain(lat, lng) {
-//   let sunset = getSunsetForMountain(`where ${lng} is a longitude and ${lat} is a lattiude`);
-//   let row = parksTableBody.insertRow(-1);
-//   let cell8 = row.insertCell(7);
-//   cell8.innerText = sunset;
-// }
+
 loadMountains();
 mountainsList.onchange = loadMountainsTable;
 
-//console.log(getSunsetForMountain(`where 44.320686 is a longitude and -71.291742 is a lattiude`));
-// getSunsetForMountain(`where ${lng} is a longitude and ${lat} is a lattiude`);
